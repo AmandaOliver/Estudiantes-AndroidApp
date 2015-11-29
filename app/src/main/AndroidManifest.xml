@@ -18,6 +18,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TodosActivity"
+            android:label="@string/title_activity_todos"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".BusquedaActivity"
+            android:label="@string/title_activity_busqueda"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".NuevoActivity"
+            android:label="@string/title_activity_nuevo"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".BorrarActivity"
+            android:label="@string/title_activity_borrar"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
 </manifest>

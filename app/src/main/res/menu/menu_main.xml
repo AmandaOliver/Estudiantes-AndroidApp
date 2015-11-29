@@ -1,6 +1,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/Todos"
+        android:title="@string/Todos"
+        android:icon="@drawable/todos"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/Búsqueda"
+        android:title="@string/Búsqueda"
+        android:icon="@drawable/busqueda"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/Nuevo"
+        android:title="@string/Nuevo"
+        android:icon="@drawable/nuevo"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/Borrar"
+        android:title="@string/Borrar"
+        android:icon="@drawable/borrar"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
 </menu>
