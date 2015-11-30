@@ -12,4 +12,6 @@
     <string name="title_activity_borrar">Borrar</string>
     <string name="Presentados">Presentados</string>
     <string name="EnDesarrollo">En desarrollo</string>
+    <string name="busqueda">Introduzca los apellidos:</string>
+    <string name="buscar">Buscar</string>
 </resources>
