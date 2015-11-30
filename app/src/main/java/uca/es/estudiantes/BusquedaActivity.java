@@ -13,8 +13,10 @@ import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+//clase principal para realizar las funciones de búsqueda
 public class BusquedaActivity extends AppCompatActivity {
+
+    //elementos del layout que vamos a usar
     private EditText busca;
     private Button boton;
     private TextView texto;
@@ -25,6 +27,7 @@ public class BusquedaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_busqueda);
 
+        //se instancian los elementos del layout que vamos a utilizar
         busca=(EditText) findViewById(R.id.busca);
         boton=(Button) findViewById(R.id.boton);
         texto=(TextView) findViewById(R.id.texto);
@@ -41,10 +44,13 @@ public class BusquedaActivity extends AppCompatActivity {
             }
         });
 
-        boton = (Button) findViewById(R.id.boton);
+        //funcionalidad del boton "buscar"
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //llamada a la tarea asincrona que llamará al servicio web,
+                //se le pasa el contexto y el texto que hemos escrito en el campo de búsqueda
                 TareaBusquedaAsincrona Tarea = new TareaBusquedaAsincrona(getApplicationContext(), texto, busca.getText().toString());
                 Tarea.execute();
             }

@@ -16,9 +16,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.Scanner;
 
-/**
- * Created by usuario on 29/11/2015.
- */
+//Clase que modela la tarea asíncrona de mostrar los alumnos que están desarrollando el TFG
 public class TareaTodosEnDesarrolloAsincrona extends AsyncTask<Void , Void , String> {
     private String IP = "10.181.102.28";
     private Context context;
@@ -50,7 +48,9 @@ public class TareaTodosEnDesarrolloAsincrona extends AsyncTask<Void , Void , Str
 
     }
     protected void onPostExecute(String results) {
+        //borramos la lista que se estaba mostrando antes
         adaptador.clear();
+
         String nombre=null;
         String tema=null;
         String apellido1=null;
@@ -59,21 +59,30 @@ public class TareaTodosEnDesarrolloAsincrona extends AsyncTask<Void , Void , Str
         JSONObject jsonObject=null;
 
         try {
+            //El servicio devuelve un Array de JSON
             JSONArray jsonArray = new JSONArray(results);
+
+            //Recorremos el Array para obtener el JSON correspondiente a cada estudiante
             for (int i = 0; i < jsonArray.length(); i++) {
+
                 jsonObject = jsonArray.getJSONObject(i);
+
+                //Solo vamos a mostrar los que están desarrollando el TFG
                 if(Objects.equals(jsonObject.getString("estado"), "ENDESARROLLO")){
                     nombre = jsonObject.getString("nombre");
                     apellido1= jsonObject.getString("apellido1");
                     apellido2=jsonObject.getString("apellido2");
                     tema= jsonObject.getString("tema");
                     cadena=nombre+" "+apellido1+" "+apellido2+" "+tema;
+                    //Añadimos la cadena a la lista
                     adaptador.add(cadena);
                 }
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        //relacionamos el adaptador con la lista
         lista.setAdapter(adaptador);
     }
 }

@@ -15,9 +15,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by usuario on 30/11/2015.
- */
+//Clase que modela la tarea asíncrona de buscar un estudiante
 public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
     private String IP = "10.181.102.28";
     private TextView texto;
@@ -28,6 +26,8 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
     TareaBusquedaAsincrona(Context c, TextView t, String a){
         context=c;
         texto=t;
+        //Al path hay que pasarle los apellidos juntos,
+        //pero en la búsqueda pueden estar separados
         apellidos=a.replace(" ","");
     }
     @Override
@@ -35,7 +35,9 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
         String text = null;
         HttpURLConnection urlConnection = null;
         try{
+            //es necesario codificar los apellidos en utf-8 para que la url funcione correctamente
             String query = URLEncoder.encode(apellidos, "utf-8");
+
             URL urlToRequest = new URL("http://"+IP+":8080/WebRestServer/TFG/estudiante/"+query);
             urlConnection = (HttpURLConnection) urlToRequest.openConnection();
             InputStream in =
@@ -51,7 +53,7 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
         return text;
     }
     protected void onPostExecute(String results) {
-
+        //si el codigo es 200 significa que la operación se ha realizado con éxito
         if (code!=200) {
             Toast.makeText(context, "¡Estudiante no encontrado!",
                     Toast.LENGTH_SHORT).show();

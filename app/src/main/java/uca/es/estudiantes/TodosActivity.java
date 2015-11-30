@@ -21,10 +21,11 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
-
+//Clase principal para mostrar los estudiantes
 public class TodosActivity extends AppCompatActivity {
+    //Elementos del layout que vamos a usar
     private ListView lista;
-    private ArrayAdapter<String> adaptador;
+    private ArrayAdapter<String> adaptador;// Adaptador para mostrar los elementos de la lista
     private Button botonPresentados;
     private Button botonEnDesarrollo;
 
@@ -33,8 +34,11 @@ public class TodosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todos);
 
+        //se instancian los elementos del layout que vamos a utilizar
         lista = (ListView) findViewById(R.id.listaEstudiantes);
         adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        botonPresentados = (Button) findViewById(R.id.botonPresentados);
+        botonEnDesarrollo=(Button)findViewById(R.id.botonEnDesarrollo);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -48,19 +52,23 @@ public class TodosActivity extends AppCompatActivity {
             }
         });
 
-        botonPresentados = (Button) findViewById(R.id.botonPresentados);
+       //funcionalidad del boton que muestra los alumnos que ya han presentado el TFG
         botonPresentados.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //llamada a la tarea asincrona que mostrará los alumnos, se le pasa la lista y su adaptador
                 TareaTodosPresentadosAsincrona Tarea=  new TareaTodosPresentadosAsincrona(getApplicationContext(), lista, adaptador);
                 Tarea.execute();
             }
         });
 
-        botonEnDesarrollo=(Button)findViewById(R.id.botonEnDesarrollo);
+        //funcionalidad del boton que muestra los alumnos que aun están desarrollando el TFG
         botonEnDesarrollo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //llamada a la tarea asincrona que mostrará los alumnos, se le pasa la lista y su adaptador
                 TareaTodosEnDesarrolloAsincrona Tarea = new TareaTodosEnDesarrolloAsincrona(getApplicationContext(), lista, adaptador);
                 Tarea.execute();
             }

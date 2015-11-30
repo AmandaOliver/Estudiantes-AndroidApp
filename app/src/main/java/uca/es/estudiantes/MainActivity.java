@@ -38,10 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
 
+        //Según el botón del toolbar que pulsemos, iremos a una actividad u otra
         switch (item.getItemId()) {
             case R.id.Todos:
                 Intent intentTodos = new Intent(MainActivity.this, TodosActivity.class);
