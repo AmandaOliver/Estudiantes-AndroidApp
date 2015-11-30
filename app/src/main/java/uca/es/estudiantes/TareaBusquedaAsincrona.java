@@ -23,6 +23,7 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
     private TextView texto;
     private Context context;
     private String apellidos;
+    private int code;
 
     TareaBusquedaAsincrona(Context c, TextView t, String a){
         context=c;
@@ -41,6 +42,8 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
                     new BufferedInputStream(urlConnection.getInputStream());
             text=new Scanner(in).useDelimiter(
                     "\\A").next();
+
+            code=urlConnection.getResponseCode();
         }catch (Exception e){return e.toString();}
         finally { if (urlConnection != null) { urlConnection.disconnect(); }
         }
@@ -49,11 +52,10 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
     }
     protected void onPostExecute(String results) {
 
-        Pattern pat = Pattern.compile("^java.*");
-        Matcher mat = pat.matcher(results);
-        if (mat.matches()) {
+        if (code!=200) {
             Toast.makeText(context, "¡Estudiante no encontrado!",
                     Toast.LENGTH_SHORT).show();
+
         } else {
             texto.setText(results);
         }
