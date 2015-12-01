@@ -14,4 +14,16 @@
     <string name="EnDesarrollo">En desarrollo</string>
     <string name="busqueda">Introduzca los apellidos:</string>
     <string name="buscar">Buscar</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido1">Primer apellido</string>
+    <string name="apellido2">Segundo apellido</string>
+    <string name="tema">Tema del TFG</string>
+    <string name="tutor1">Director del TFG</string>
+    <string name="tutor2">Co-director del TFG</string>
+    <string name="estado">Estado del TFG</string>
+    <string name="fecha">Fecha de presentacion</string>
+    <string name="calificacion">Calificacion</string>
+    <string name="crear">Crear</string>
+    <string name="title_activity_widget">WidgetActivity</string>
+    <string name="widget">Estudiantes</string>
 </resources>

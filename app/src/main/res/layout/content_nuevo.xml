@@ -8,8 +8,168 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_nuevo" tools:context="uca.es.estudiantes.NuevoActivity">
+
+
     <TextView
-        android:text="nuevo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/nombre"
+        android:id="@+id/nombre"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editNombre"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/apellido1"
+        android:id="@+id/apellido1"
+        android:layout_below="@+id/editNombre"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editApellido1"
+        android:layout_alignTop="@+id/apellido1"
+        android:layout_alignEnd="@+id/editNombre"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/apellido2"
+        android:id="@+id/apellido2"
+        android:layout_below="@+id/editApellido1"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editApellido2"
+        android:layout_below="@+id/editApellido1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/tema"
+        android:id="@+id/tema"
+        android:layout_below="@+id/editApellido2"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTema"
+        android:layout_alignTop="@+id/tema"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/tutor1"
+        android:id="@+id/tutor1"
+        android:layout_below="@+id/editTema"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTutor1"
+        android:layout_below="@+id/editTema"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/tutor2"
+        android:id="@+id/tutor2"
+        android:layout_below="@+id/editTutor1"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTutor2"
+        android:layout_below="@+id/editTutor1"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/estado"
+        android:id="@+id/estado"
+        android:layout_below="@+id/editTutor2"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editEstado"
+        android:layout_below="@+id/editTutor2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/fecha"
+        android:id="@+id/fecha"
+        android:layout_below="@+id/editEstado"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editFecha"
+        android:layout_alignTop="@+id/fecha"
+        android:layout_alignEnd="@+id/editEstado"
+        android:layout_toEndOf="@+id/fecha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/calificacion"
+        android:id="@+id/calificacion"
+        android:layout_below="@+id/editFecha"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editCalificacion"
+        android:layout_alignTop="@+id/calificacion"
+        android:layout_alignEnd="@+id/editFecha"
+        android:layout_alignStart="@+id/editFecha"
+        android:layout_toEndOf="@+id/fecha"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/crear"
+        android:id="@+id/boton"
+        android:layout_below="@+id/editCalificacion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp" />
 </RelativeLayout>
