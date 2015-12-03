@@ -13,7 +13,7 @@ import java.net.URLEncoder;
 //Clase que modela la tarea asíncrona de borrar un estudiante
 public class TareaBorrarAsincrona extends AsyncTask<Void , Void , String> {
 
-    private String IP = "10.181.102.28";//Cambiar esta ip por la del servidor
+    private String ip = IP.getIP();
     private Context context;
     private String apellidos;
     private int code;//código para guardar la respuesta del servidor
@@ -36,7 +36,7 @@ public class TareaBorrarAsincrona extends AsyncTask<Void , Void , String> {
             //es necesario codificar los apellidos en utf-8 para que la url funcione correctamente
             String query = URLEncoder.encode(apellidos, "utf-8");
             //Se indica la url de nuestro servicio
-            url = new URL("http://"+IP+":8080/WebRestServer/TFG/delete/"+query);
+            url = new URL("http://"+ip+":8080/WebRestServer/TFG/delete/"+query);
         } catch (Exception exception ) {
             exception.printStackTrace();
         }

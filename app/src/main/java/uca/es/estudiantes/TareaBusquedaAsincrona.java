@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 //Clase que modela la tarea asíncrona de buscar un estudiante
 public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
-    private String IP = "10.181.102.28";
+    private String ip = IP.getIP();
     private TextView texto;
     private Context context;
     private String apellidos;
@@ -38,7 +38,7 @@ public class TareaBusquedaAsincrona extends AsyncTask<Void , Void , String> {
             //es necesario codificar los apellidos en utf-8 para que la url funcione correctamente
             String query = URLEncoder.encode(apellidos, "utf-8");
 
-            URL urlToRequest = new URL("http://"+IP+":8080/WebRestServer/TFG/estudiante/"+query);
+            URL urlToRequest = new URL("http://"+ip+":8080/WebRestServer/TFG/estudiante/"+query);
             urlConnection = (HttpURLConnection) urlToRequest.openConnection();
             InputStream in =
                     new BufferedInputStream(urlConnection.getInputStream());

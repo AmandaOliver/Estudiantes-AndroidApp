@@ -27,7 +27,7 @@ import java.util.Scanner;
 
 //Clase que modela la tarea asíncrona de crear un estudiante
 public class TareaCrearAsincrona extends AsyncTask<Void , Void , String> {
-    private String IP = "10.181.102.28";//cambiar esta ip por la del servidor
+    private String ip = IP.getIP();//cambiar esta ip por la del servidor
     private Context context;
     private int code;//código para guardar la respuesta del servidor
     private String nombre;
@@ -59,7 +59,7 @@ public class TareaCrearAsincrona extends AsyncTask<Void , Void , String> {
         try {
 
             //Se indica la url de nuestro servicio
-            url = new URL("http://"+IP+":8080/WebRestServer/TFG/addEstudiante/");
+            url = new URL("http://"+ip+":8080/WebRestServer/TFG/addEstudiante/");
         } catch (Exception exception ) {
             exception.printStackTrace();
         }

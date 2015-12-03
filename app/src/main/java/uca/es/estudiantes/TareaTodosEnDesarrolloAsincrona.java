@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 //Clase que modela la tarea asíncrona de mostrar los alumnos que están desarrollando el TFG
 public class TareaTodosEnDesarrolloAsincrona extends AsyncTask<Void , Void , String> {
-    private String IP = "10.181.102.28";
+    private String ip = IP.getIP();
     private Context context;
     private ListView lista;
     private ArrayAdapter<String> adaptador;
@@ -34,7 +34,7 @@ public class TareaTodosEnDesarrolloAsincrona extends AsyncTask<Void , Void , Str
         String text = null;
         HttpURLConnection urlConnection = null;
         try{
-            URL urlToRequest = new URL("http://"+IP+":8080/WebRestServer/TFG/all");
+            URL urlToRequest = new URL("http://"+ip+":8080/WebRestServer/TFG/all");
             urlConnection = (HttpURLConnection) urlToRequest.openConnection();
             InputStream in =
                     new BufferedInputStream(urlConnection.getInputStream());
