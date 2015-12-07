@@ -115,7 +115,7 @@ public class TareaCrearAsincrona extends AsyncTask<Void , Void , String> {
             //Notificacion
             NotificationCompat.Builder notificacion =
                     new NotificationCompat.Builder(context)
-                            .setSmallIcon(R.drawable.ic_stat_name)
+                            .setSmallIcon(R.drawable.ic_stat_name2)
                             .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_stat_name2))
                             .setContentTitle("Creado")
                             .setContentText("Estudiante correctamente creado")

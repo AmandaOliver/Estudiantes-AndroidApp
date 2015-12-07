@@ -43,7 +43,7 @@
         </activity>
 
 
-        <receiver android:name=".widget"
+        <receiver android:name=".Widget"
             android:label="Mi Widget de Servicios"
             >
             <intent-filter
