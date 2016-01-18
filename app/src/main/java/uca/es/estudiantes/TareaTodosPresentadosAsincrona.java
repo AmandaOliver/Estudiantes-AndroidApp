@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
+import android.content.Context;
 
 //Clase que modela la tarea asíncrona de mostrar los alumnos que están desarrollando el TFG
 public class TareaTodosPresentadosAsincrona extends AsyncTask<Void , Void , String> {

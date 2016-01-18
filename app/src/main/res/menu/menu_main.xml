@@ -21,4 +21,9 @@
         android:icon="@drawable/borrar"
         android:orderInCategory="100"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/Inicio"
+        android:title="@string/Inicio"
+        android:icon="@mipmap/inicio"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom" />
 </menu>
